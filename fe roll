@@ -1,0 +1,31 @@
+local l__ReplicatedStorage__1 = game:GetService("ReplicatedStorage");
+local l__ContextActionService__2 = game:GetService("ContextActionService");
+local v3 = Instance.new("Animation");
+v3.AnimationId = "rbxassetid://6781730858";
+local u1 = false;
+local u2 = false;
+
+
+    	u1 = true;
+		game.Players.LocalPlayer.Character.Humanoid.Animator:LoadAnimation(v3):Play();
+		
+		local l__LocalPlayer__4 = game.Players.LocalPlayer;
+		
+			local v5 = Instance.new("BodyVelocity");
+			v5.Velocity = l__LocalPlayer__4.Character:WaitForChild("HumanoidRootPart").CFrame.LookVector * 100;
+			v5.Parent = l__LocalPlayer__4.Character.HumanoidRootPart;
+			game:GetService("Debris"):AddItem(v5, 0.1);
+			for v6, v7 in pairs(l__LocalPlayer__4.Character:GetDescendants()) do
+				if v7:IsA("BasePart") then
+					v7.Massless = true;
+				end;
+			end;
+			wait(0.6);
+			if l__LocalPlayer__4.Character then
+				for v8, v9 in pairs(l__LocalPlayer__4.Character:GetChildren()) do
+					if v9:IsA("BasePart") then
+						v9.Massless = false;
+					end;
+				end;
+			end;
+		u1 = false;
